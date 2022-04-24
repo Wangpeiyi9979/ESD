@@ -1,0 +1,7 @@
+nltk==3.5
+numpy
+transformers
+apex==0.9.10dev
+scikit_learn==0.24.1
+tqdm
+ipdb
