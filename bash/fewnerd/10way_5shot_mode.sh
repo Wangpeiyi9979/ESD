@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 N=10
 K=5
-seeds=(4)
+seeds=(1 2 3 4 5)
 modes=$2
 bert_lr=2e-5
 gard_iter=2
