@@ -95,9 +95,9 @@ bash bash/snips/1-shot/1_shot_mode_1.sh [gpu_id]
 bash bash/snips/1-shot/1_shot_mode_7.sh [gpu_id]
 ```
 ```
-bash bash/snips/5-shot/1_shot_mode_1.sh [gpu_id]
+bash bash/snips/5-shot/5_shot_mode_1.sh [gpu_id]
 ...
-bash bash/snips/5-shot/1_shot_mode_7.sh [gpu_id]
+bash bash/snips/5-shot/5_shot_mode_7.sh [gpu_id]
 ```
 
 
