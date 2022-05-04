@@ -66,9 +66,6 @@ def main():
     parser.add_argument('--optimizer', type=str, default='adamw',
                     help='optimizer')
 
-    parser.add_argument('--activation', default='gelu', type=str,
-                        help='activation function')
-
     parser.add_argument('--shuffle', action='store_true',
                         help='shuffle train data')
 
@@ -108,7 +105,6 @@ def main():
     N = opt.N
     K = opt.K
     model_name = opt.model
-    max_length = opt.max_length
     opt.O_class_num = 3
 
     if opt.dataset == 'fewnerd':
@@ -116,7 +112,6 @@ def main():
     else:
         print("{}-shot SNIPS".format(K))
     print("model: {}".format(model_name))
-    print("max_length: {}".format(max_length))
     print('mode: {}'.format(opt.mode))
 
     set_seed(opt.seed)

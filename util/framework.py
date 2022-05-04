@@ -287,7 +287,6 @@ class FewShotNERFramework:
                 pred = pred.cpu().tolist()
                 logits = torch.max(logits.softmax(dim=-1), 1)[0].cpu().tolist()
                 
-              
                 pred_entitys_origin = self.get_entity_tuples(spans, span_lens, logits, pred, with_score=False, MAX_LEN=L)
                 pred_entitys_origin_score = self.get_entity_tuples(spans, span_lens, logits, pred, with_score=True, MAX_LEN=L)
         

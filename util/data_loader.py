@@ -1,10 +1,9 @@
 import torch
 import torch.utils.data as data
 import os
-# from .fewshotsampler import FewshotSampler, FewshotSampleBase
 from transformers import BertTokenizer
 import random
-from .utils import start_of_chunk, end_of_chunk, get_entities
+from .utils import get_entities
 from copy import copy
 import json
 

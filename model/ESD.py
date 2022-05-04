@@ -3,11 +3,10 @@ import sys
 sys.path.append('..')
 import util
 import torch
-from torch import autograd, optim, nn
-from torch.autograd import Variable
+from torch import nn
 from torch.nn import functional as F
 from transformers import BertModel, BertTokenizer
-from model.utils import MultiHeadedAttentionWithFNN, fast_att, sequence_mask, Swish
+from model.utils import MultiHeadedAttentionWithFNN, fast_att, sequence_mask
 
 BertHiddenSize=768
 
@@ -31,8 +30,8 @@ class ESD(nn.Module):
 
         self.tokenizer = BertTokenizer.from_pretrained(opt.bert_path)
         self.word_encoder = BertModel.from_pretrained(opt.bert_path)
-        self.inter_attentioner = MultiHeadedAttentionWithFNN(embed_dim=opt.hidsize, num_heads=opt.num_heads, dropout=opt.dropout, activation=opt.activation)
-        self.cross_attentioner = MultiHeadedAttentionWithFNN(embed_dim=opt.hidsize, num_heads=opt.num_heads, dropout=opt.dropout, activation=opt.activation)
+        self.inter_attentioner = MultiHeadedAttentionWithFNN(embed_dim=opt.hidsize, num_heads=opt.num_heads, dropout=opt.dropout)
+        self.cross_attentioner = MultiHeadedAttentionWithFNN(embed_dim=opt.hidsize, num_heads=opt.num_heads, dropout=opt.dropout)
      
 
     def __dist__(self, x, y, dim):
@@ -146,13 +145,13 @@ class ESD(nn.Module):
                 for label in range(start_id, max_tags):
                     class_rep = support_span_enhance_rep[support_all_span_tags == label, :]  # class_span_num x hidden_size
                     # INSA
-                    proto_rep = fast_att(query_span_enhance_rep, class_rep, activation=self.opt.activation)  # one_query_span_num x hidden_size
+                    proto_rep = fast_att(query_span_enhance_rep, class_rep)  # one_query_span_num x hidden_size
                     proto_for_each_query.append(proto_rep.unsqueeze(0))
                     
                 proto_for_each_query = torch.cat(proto_for_each_query, 0).permute(1, 0, 2)  # one_query_span_num x num_class x hidden_size
                 O_reps = proto_for_each_query[:, :self.opt.O_class_num, :] # one_query_span_num x num_class x hidden_size
                 # PSA
-                O_rep = fast_att(query_span_enhance_rep, O_reps, activation=self.opt.activation) # one_query_span_num x hidden_size
+                O_rep = fast_att(query_span_enhance_rep, O_reps) # one_query_span_num x hidden_size
                 proto_for_each_query = torch.cat([O_rep.unsqueeze(1), proto_for_each_query[:, self.opt.O_class_num:, :]], dim=1)
             # -------------------- Span ProtoTypical Module (END) -------------------------
 
