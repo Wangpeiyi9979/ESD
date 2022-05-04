@@ -95,19 +95,19 @@ bash bash/snips/1-shot/1_shot_mode_1.sh [gpu_id]
 bash bash/snips/1-shot/1_shot_mode_7.sh [gpu_id]
 ```
 ```
-bash bash/snips/5-shot/1_shot_mode_1.sh [gpu_id]
+bash bash/snips/5-shot/5_shot_mode_1.sh [gpu_id]
 ...
-bash bash/snips/5-shot/1_shot_mode_7.sh [gpu_id]
+bash bash/snips/5-shot/5_shot_mode_7.sh [gpu_id]
 ```
 
 
 # 🌝 Citation
-If you use our code, plearse cite our paper:
+If you use our code, please cite our paper:
 ```
-@article{wang2021enhanced,
-  title={An Enhanced Span-based Decomposition Method for Few-Shot Sequence Labeling},
-  author={Wang, Peiyi and Xu, Runxin and Liu, Tianyu and Zhou, Qingyu and Cao, Yunbo and Chang, Baobao and Sui, Zhifang},
-  journal={arXiv preprint arXiv:2109.13023},
-  year={2021}
+@inproceedings{wang2021enhanced,
+    title = "An Enhanced Span-based Decomposition Method for Few-Shot Sequence Labeling",
+    author = "Wang, Peiyi and Xu, Runxin and Liu, Tianyu and Zhou, Qingyu and Cao, Yunbo and Chang, Baobao and Sui, Zhifang",
+    booktitle = "Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL).",
+    year = "2022"
 }
 ```
