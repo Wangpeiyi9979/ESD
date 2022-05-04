@@ -27,8 +27,7 @@ def main():
                         help='training mode, must be in [inter, intra, supervised, 1, 2, 3, 4, ...]')
     parser.add_argument('--dataset', default='fewnerd',
                         help='training datasets, must be in [fewnerd, snips, ner]')
-    parser.add_argument('--trainN', default=5, type=int,
-                        help='N in train')
+
     parser.add_argument('--N', default=5, type=int,
                         help='N way')
     parser.add_argument('--K', default=2, type=int,
@@ -37,8 +36,7 @@ def main():
                         help='batch size')
     parser.add_argument('--model', default='ESD',
                         help='model name, must be basic-bert, proto, nnshot, or structshot')
-    parser.add_argument('--max_length', default=100, type=int,
-                        help='max length')
+
     parser.add_argument('--lr', default=1e-4, type=float,
                         help='learning rate')
     parser.add_argument('--bert_lr', default=3e-5, type=float,
