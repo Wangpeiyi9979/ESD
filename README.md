@@ -10,7 +10,7 @@ Few-Shot Sequence Labeling (FSSL) is a canonical paradigm for the tagging models
 
 
 # 🚀 How to use our code?
-## 💾 Enviroment
+## 💾 Environment
 ```
 pip install -r requirements.txt
 ```
@@ -104,10 +104,23 @@ bash bash/snips/5-shot/5_shot_mode_7.sh [gpu_id]
 # 🌝 Citation
 If you use our code, please cite our paper:
 ```
-@inproceedings{wang2021enhanced,
+@inproceedings{wang-etal-2022-enhanced,
     title = "An Enhanced Span-based Decomposition Method for Few-Shot Sequence Labeling",
-    author = "Wang, Peiyi and Xu, Runxin and Liu, Tianyu and Zhou, Qingyu and Cao, Yunbo and Chang, Baobao and Sui, Zhifang",
-    booktitle = "Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL).",
-    year = "2022"
+    author = "Wang, Peiyi  and
+      Xu, Runxin  and
+      Liu, Tianyu  and
+      Zhou, Qingyu  and
+      Cao, Yunbo  and
+      Chang, Baobao  and
+      Sui, Zhifang",
+    booktitle = "Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies",
+    month = jul,
+    year = "2022",
+    address = "Seattle, United States",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.naacl-main.369",
+    doi = "10.18653/v1/2022.naacl-main.369",
+    pages = "5012--5024",
+    abstract = "Few-Shot Sequence Labeling (FSSL) is a canonical paradigm for the tagging models, e.g., named entity recognition and slot filling, to generalize on an emerging, resource-scarce domain. Recently, the metric-based meta-learning framework has been recognized as a promising approach for FSSL. However, most prior works assign a label to each token based on the token-level similarities, which ignores the integrality of named entities or slots. To this end, in this paper, we propose ESD, an Enhanced Span-based Decomposition method for FSSL. ESD formulates FSSL as a span-level matching problem between test query and supporting instances. Specifically, ESD decomposes the span matching problem into a series of span-level procedures, mainly including enhanced span representation, class prototype aggregation and span conflicts resolution. Extensive experiments show that ESD achieves the new state-of-the-art results on two popular FSSL benchmarks, FewNERD and SNIPS, and is proven to be more robust in the noisy and nested tagging scenarios.",
 }
 ```
